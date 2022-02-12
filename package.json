@@ -1,11 +1,35 @@
 {
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node server.js",
+  "dev": "nodemon server.js",
+  "db:seed": "node seed/data.js"
+},
+"name": "techtogether-miami",
+"description": "",
+"version": "1.0.0",
+"main": "server.js",
+"repository": {
+  "type": "git",
+  "url": "git+https://github.com/tiffanybibby/techtogether-miami.git"
+},
+"keywords": [],
+"author": "",
+"license": "ISC",
+"bugs": {
+  "url": "https://github.com/tiffanybibby/techtogether-miami/issues"
+},
+"homepage": "https://github.com/tiffanybibby/techtogether-miami#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.1",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "type": "module"
 }
