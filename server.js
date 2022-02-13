@@ -1,41 +1,23 @@
-'use strict'
+import db from './db/connection.js'
+import routes from './routes/index.js'
 
-import cors from 'cors';
-import express from 'express';
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
+import express from 'express'
+import cors from 'cors'
+import logger from 'morgan'
 
-const app = express();
-const router = express.Router();
+const app = express()
+const PORT = process.env.PORT
 
-// env variables
-const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/mern-starter';
+app.use(express.json())
+app.use(cors())
+app.use(logger('dev'))
 
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
+app.use('/api', routes)
 
-app.use(bodyParser.json(),cors())
-
-app.use(require('../route/auth-router'));
-
-app.all('*', (request, response) => {
-  console.log('Returning a 404 from the catch-all route');
-  return response.sendStatus(404);
-});
-
-// error middleware
-app.use(require('./error-middleware'));
-
-
-export const start = () => {
-  app.listen(PORT, () =>{
-    console.log(`Listening on port: ${PORT}`)
-  })
-}
-
-export const stop = () => {
-  app.close(PORT, () => {
-    console.log(`Shut down on port: ${PORT}`)
-  })
-}
+db.on('connected', () => {
+  console.log('Connected to MongoDB!')
+  app.listen(PORT, () => 
+    process.env.NODE_ENV === 'production'
+      ? console.log(`Express server running in production on port ${PORT}\n\n`) 
+        : console.log(`Express server running in development on: http://localhost:${PORT}`))
+})

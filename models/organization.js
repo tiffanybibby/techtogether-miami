@@ -1,30 +1,30 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
-const Ad = new Schema(
+const Organization = new Schema(
   {
-    organization_id: {
-      type: Schema.Types.ObjectId,
-      ref: 'organizations',
-    },
-    date: {
+    name: {
       type: String,
       required: true,
     },
-    time: {
+    rep_name: {
       type: String,
       required: true,
     },
-    location: {
+    phone: {
+      type: String,
+      required: true,
+    },
+    email: {
       type: String,
       required: true
     },
-    volunteer_amount: {
-      type: Number,
+    password_digest: {
+      type: String,
       required: true,
       select: false
     },
   },
   { timestamps: true }
 )
-export default mongoose.model('ads', Ad)
+export default mongoose.model('organziations', Organization)
