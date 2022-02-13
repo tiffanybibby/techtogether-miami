@@ -9,7 +9,7 @@ Meet *Miami Cleanup Connect*. Our web application was designed with everyday peo
 When researching Miami, the culture, and the issues the city faces, we noticed that ocean pollution was a major issues with few solutions. Miami is known for its beautiful beaches, but single-use plastics are posing a threat to both the water quality and wildlife. We decided that we could combine our technological skills to help fix this issue, while keeping in mind the unique, rich culture of Miami.
 
 ## How We Built It
-We used the MERN stack, employing mongodb, node.js, express, and React to build our app in Visual Studio Code. We also used Github for version control and collaboration.
+We used mongodb, node.js, express, html, and css to build our app in Visual Studio Code. We also used Github for version control and collaboration.
 
 ## Design Choices
 We were insipired by "retro Miami" colors for the UI in creating this app. 
@@ -28,7 +28,8 @@ Step 2. run **npm install** on the backend
 Step 3. Create a **.env** file:
 
 ```env
-# Update to the appropriate value for your Database
+*Update to the appropriate value for your Database
+
 PORT=3000
 TOKEN_KEY=[insert really long good key]
 SALT_ROUNDS=11
@@ -42,7 +43,11 @@ Step 4. Run the command **npm start** on the frontend
 *2/11/2022-2/13/2022*
 
 **Team:**
+
 Christine Kuan, @christinekuan8838, Designer/Frontend Developer
+
 Victoria Cheng, @victoriacheng15,  Designer/Frontend Developer
+
 Mina Whitfield, @minawh, Backend Developer
+
 Tiffany Bibby, @tiffanybibby, Backend Developer
