@@ -1,0 +1,388 @@
+:root {
+  --retro-blue: #0b549d;
+  --retro-yellow: #fbac44;
+  --retro-pink: #e52d80;
+  --retro-yellow-light: #eee90f;
+
+  /*  font family, weight: quicksand - 400, 700 | bodoni - 500 */
+  --heading: "Bodoni Moda", serif;
+  --body-text: "Quicksand", sans-serif;
+}
+
+*,
+*::before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--body-text);
+  background: linear-gradient(to right, var(--retro-yellow), var(--retro-pink));
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  text-transform: capitalize;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: min(90%, 1280px);
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: underline wavy var(--retro-pink) 3px;
+  margin-bottom: 0.75rem;
+}
+
+/* ================================ navbar ============================================ */
+
+nav {
+  padding-block: 1rem;
+  background: var(--retro-blue);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.login-desktop {
+  display: none;
+  padding: 0.25rem 2rem;
+  border-radius: 20px;
+  background: var(--retro-yellow);
+  color: var(--retro-blue);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.login-desktop:hover {
+  background: var(--retro-pink);
+  color: #fff;
+}
+
+.hamburger {
+  padding: 5px;
+  width: 35px;
+  aspect-ratio: 1;
+  background: var(--retro-yellow);
+  display: grid;
+  place-items: center;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.hamburger:hover {
+  opacity: 0.8;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background: var(--retro-pink);
+  position: relative;
+}
+
+.hamburger span:before,
+.hamburger span:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background: var(--retro-pink);
+}
+
+.hamburger span:before {
+  transform: translateY(-8px);
+}
+
+.hamburger span:after {
+  transform: translateY(8px);
+}
+
+.mobile-menu {
+  position: fixed;
+  margin: 0 auto;
+  inset: 80px 0 0 0;
+  width: 90%;
+  height: 50vh;
+  background: var(--retro-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.75rem;
+  transform: translate(100%, -150%);
+  transition: all 400ms ease-in-out;
+}
+
+.nav-link,
+.mobile-menu li a {
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+.nav-link:hover,
+.mobile-menu li a:hover {
+  background: var(--retro-pink);
+}
+
+.nav-link {
+  font-size: 18px;
+}
+
+.login {
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  background: var(--retro-yellow);
+  color: var(--retro-blue);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.login:hover {
+  background: var(--retro-pink);
+  color: #fff;
+}
+
+.mobile-menu.open {
+  transform: translate(0, 0);
+}
+
+/* ============================== header =================== */
+
+.header {
+  padding-block: 1rem;
+}
+
+.img-container {
+  padding-block: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================== culture =================== */
+
+.culture {
+  padding-block: 1rem;
+}
+
+/* ============================== ocean pollutaion and action =================== */
+
+.ocean-pollution h3 {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.action-to-take {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.action-to-take li a {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background: var(--retro-blue);
+}
+
+.action-to-take li a:hover {
+  background: var(--retro-pink);
+  color: #fff;
+}
+/* ============================== impact calculator =================== */
+
+.impact-calculator {
+  padding-block: 1rem;
+}
+
+.impact-calculator h2 {
+  margin-bottom: 2rem;
+}
+
+label {
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+input {
+  padding: 0.25rem 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+form h3,
+.result h3 {
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.form-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.question {
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 4px solid var(--retro-pink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.result p {
+  margin: 0 auto;
+  width: 80%;
+  line-height: 2;
+}
+
+/* ============================== footer =================== */
+
+footer {
+  padding-block: 1rem;
+  background: var(--retro-blue);
+}
+
+footer p {
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.contact-info {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-media,
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media ul,
+.contact ul {
+  text-align: center;
+}
+
+.contact ul li {
+  color: #fff;
+}
+
+@media screen and (min-width: 800px) {
+  .img-container {
+    flex-direction: row;
+  }
+
+  .img-container img {
+    width: 50%;
+    height: 300px;
+  }
+
+  .social-media {
+    align-items: flex-start;
+  }
+
+  .social-media ul {
+    text-align: left;
+  }
+
+  .contact-info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .login-desktop {
+    display: block;
+  }
+
+  .form-result {
+    flex-direction: row;
+  }
+
+  .result {
+    width: 50%;
+  }
+}
