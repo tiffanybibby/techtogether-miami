@@ -30,7 +30,7 @@ const insertData = async () => {
 
     const org1 = new Organization({
         name: 'Clean Miami',
-        rep_name: 'Victoria',
+        rep_name: 'Victoria White',
         phone: '0123456789',
         email: 'cleanmiami@mail.com',
         password_digest: await bcrypt.hash('U21&F64Vkx', SALT_ROUNDS),
@@ -38,7 +38,7 @@ const insertData = async () => {
 
     const org2 = new Organization({
         name: 'Sunny Days',
-        rep_name: 'Regina',
+        rep_name: 'Regina Brown',
         phone: '9876543210',
         email: 'sunnydaysmi@mail.com',
         password_digest: await bcrypt.hash('K7s=xg6km5', SALT_ROUNDS),
@@ -62,7 +62,8 @@ const insertData = async () => {
         
     //adds ads to db
     await Ad.insertMany(ads);
-    console.log("Created Successfully")
+    console.log("Created Successfully");
+    
     //close connection to database
     db.close();
 };
