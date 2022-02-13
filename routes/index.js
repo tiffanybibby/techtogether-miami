@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import adsRoutes from './ads.js'
 import usersRoutes from './users.js'
-import organizationRoutes from './organization.js'
+import organizationRoutes from './organizations.js'
 
 const router = Router()
 

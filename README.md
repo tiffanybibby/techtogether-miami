@@ -29,7 +29,7 @@ Step 3. Create a **.env** file:
 
 ```env
 # Update to the appropriate value for your Database
-PORT=3001
+PORT=3000
 TOKEN_KEY=[insert really long good key]
 SALT_ROUNDS=11
 ```
